@@ -1,0 +1,35 @@
+﻿
+<table class="table table-sm table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Grade</th>
+            <th scop="col">Image</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Trainee trainee in Model.trainees)
+        {
+        <tr>
+            <th scope="row">@trainee.Id</th>
+            <td>@trainee.Name</td>
+            <td>@trainee.Address</td>
+            <td>@trainee.Grade</td>
+            <td><img src="/OIP.jpg" height="50px" width="50px" style="border-radius:50%"/></td>
+            <td>
+                    @if (Model.IsPass(trainee.Id))
+                    {
+                        <span style = "color:green;">Success</span>
+                    }
+                    else
+                    {
+                        <span style="color:red;">Fail</span>
+                    }
+                </td>
+        </tr>
+        }
+    </tbody>
+</table>

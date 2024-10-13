@@ -1,0 +1,43 @@
+﻿@model List<Department>
+
+<form action="/Department/GetDepartment" method="get">
+    <div class="form-group">
+    <label  for="any">Please Enter The Id Of Department To Update It</label>
+    <input class="form-control" name="ID" id="any" placeholder="The Id" />
+    </div>
+    <br />
+    <input type="submit" class="btn btn-dark" value="Get The Id"/>
+</form>
+
+<form action="/Department/DeleteDepartment" method="get">
+    <div class="form-group">
+    <label  for="any">Please Enter The Name Of Department You Want To Delete</label>
+    <input class="form-control" name="Name" id="any" placeholder="The Name Of The Department" />
+    </div>
+        <br />
+    <input type="submit" class="btn btn-dark" value="Delete" />
+</form>
+<br />
+<p><a href="/Department/AddNewDepartment" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" /a>Add New Department</p>
+
+<br />
+<br />
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">ManagerName</th>
+        </tr>
+   </thead>
+   <tbody>
+@foreach(Department dept in Model)
+{
+        <tr>
+            <td>@dept.Id</td>
+            <td>@dept.Name</td>
+            <td>@dept.ManagerName</td>
+        </tr>
+}
+    </tbody>
+</table>

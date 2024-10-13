@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_CoursesLayout";
+}
+
+@section DataStrucure
+{
+    <h2 ><span style="color:powderblue">@Model[0].Name</span></h2>
+}
+
+@model List<Course>
+
+    <h1>All Courses In This WebSite</h1>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Name Of The Proffesor</th>
+            <th scope="col">Degree</th>
+            <th scope="col">MinDegree</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Course crs in Model)
+        {
+            <tr>
+                <td>@crs.Name</td>
+                <td>@crs.Degree</td>
+                <td>@crs.MinDegree</td>
+            </tr>
+        }
+    </tbody>
+</table>
